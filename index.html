@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>The invisible neighbours</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Domine:400,700|Roboto:300,400,500" rel="stylesheet">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="index.js"></script>
+  <script src="lodash.js"></script>
+</head>
+
+<body>
+  <div id="box_intro">
+    <h1>The invisible neighbours</h1>
+    <h2>
+      How does Canadian First Nation and Inuit communities'<br />quality of life compare to
+      the rest of the country?
+    </h2>
+  </div>
+  <div id="parent_intro">
+    <div id="lead">
+      Canada’s quality of life is among the best in the world, according to the <a href ="http://www.oecdbetterlifeindex.org/countries/canada/" target="_blank">Organisation for Economic Co-operation and Development</a> — but the benefits are not shared equally. 
+      <br /><br />
+      The Signal examined the quality of life of communities across Canada, using the Community Well-Being Index. It combines indicators on education, labour force activity, income and housing to give every Canadian community a well-being "score". The analysis shows just how deep disparities really are in Canada.
+      <br /><br />
+      Nine out of ten Indigenous communities lie in the bottom 10% of the country when measuring quality of life using this index, the Signal analysis found. 
+      <br /><br />
+      This is hardly surprising to Claire Durand, sociology professor at the University of Montreal. "A certain number of conditions must be united for a First Nation community to have a high well being score, because otherwise, there is an overwhelming number of obstacles to overcome." And while Inuit communities generally score slightly higher indexes, their average is far from the non-Indigenous scores.
+      <br /><br />
+      The 2016 Census data shows that Indigenous people living in isolated communities have a worse access to education, lower rates of employment and lower earnings than non-Indigenous communities.
+      <br /><br />
+      It is important to note that other factors are significant when it comes to quality of life for Indigenous people. Physical and emotional health, cultural continuity and environmental conservation all impact their well-being, and yet are not included in this index.
+      <br /><br />
+      The figures vary widely across the provinces. Select yours to learn more about it.
+    </div>
+  </div>
+
+  <div id="content_dataviz">
+    <div id="dataviz_wrapper" class="datavizzzible">
+      <div class="buttons_parent">
+        <div class="buttons">
+          <a class="provinces" data-province="AB">Alberta</a>
+          <a class="provinces" data-province="BC">British Columbia</a>
+          <a class="provinces" data-province="MB">Manitoba</a>
+          <a class="provinces" data-province="NB">New Brunswick</a>
+          <a class="provinces" data-province="NS">Nova Scotia</a>
+          <a class="provinces" data-province="ON">Ontario</a>
+          <a class="provinces" data-province="QC">Quebec</a>
+          <a class="provinces" data-province="SK">Saskatchewan</a>
+        </div>
+      </div>
+      <svg id="dataviz"></svg>
+    </div>
+
+    <div id="parent-provinces">
+      <!--ALBERTA -->
+
+      <div id="contentAB" class="content_hidden">
+        <div class="para_text1" id="para_AB_fonction1">
+          This graph shows all 297 census subdivisions of Alberta. These are specific local areas such as towns, cities, reserves and other zones treated similarly for statistical purposes.
+        </div>
+        <div class="para_text" id="para_AB_fonction2">
+          The orange circles represent all the subdivisions associated with Indigenous communities, according to
+          criterias from Indigenous and Northern Affairs Canada. Over 50 000 people live in First Nation and Inuit communities in Alberta.
+        </div>
+        <div class="para_text" id="para_AB_fonction3">
+          When put side by side, the disparity between Inidgenous communities and the rest of the province becomes
+          obvious.
+        </div>
+        <div class="para_text" id="para_AB_fonction4">
+            And when adding the median on each side, the impression of a gap deepens. Even the Indigenous communities
+            with the highest well-being scores don't exceed the median of the rest of the province.
+        </div>
+        <div class="para_text">
+          Through the country, the subdivisions with the largest population (which are the bigger circles in this graph)
+          are usually among the top. That's because the proximity to services is the most influent factor when observing
+          quality of life, and these are abundant in the cities.
+        </div>
+        <div class="para_text">
+          But a large part of First Nation and Inuit people live in remote areas, which in some cases are not accessible by road.
+          Knowing that all remote communities — whether Indigenous or not — have lower scores on the CWB Index, one
+          should be careful not to compare communities with widely different population size and geographical situation.
+          Having only two categories, Indigenous communities versus the rest of the country, then takes off this important nuance.
+        </div>
+        <div class="para_text_last"></div>
+      </div>
+
+      <!-- BRITISH COLUMBIA -->
+
+      <div id="contentBC" class="content_hidden">
+        <div class="para_text1" id="para_BC_fonction1">
+          This graph shows all 370 census subdivisions of British Columbia. These are specific local areas such as towns, cities, reserves and other zones treated similarly for statistical purposes.
+        </div>
+        <div class="para_text" id="para_BC_fonction2">
+          The orange circles represent all the subdivisions associated with Indigenous communities, according to
+          criterias from Indigenous and Northern Affairs Canada. Over 63 000 people live in First Nation and Inuit communities in British
+          Columbia.
+        </div>
+        <div class="para_text" id="para_BC_fonction3">
+          When put side by side, the disparity between Inidgenous communities and the rest of the province becomes
+          obvious.
+        </div>
+        <div class="para_text" id="para_BC_fonction4">
+            And when adding the median on each side, the impression of a gap deepens. Only three Indigenous communities
+            in British Columbia have a higher well-being score than the rest of the province's median. They are all First Nation communities: Burrard Inlet 3 and Tsawwassen, respectively 25 and 45 minutes from Vancouver, and Kamloops 1, 15 min from the city of Kamloops.
+        </div>
+        <div class="para_text">
+          Through the country, the subdivisions with the largest population (which are the bigger circles in this graph)
+          are usually among the top. That's because the proximity to services is the most influent factor when observing
+          quality of life, and these are abundant in the cities.
+        </div>
+        <div class="para_text">
+          But a large part of First Nation and Inuit people live in remote areas, which in some cases are not accessible by road.
+          Knowing that all remote communities — whether Indigenous or not — have lower scores on the CWB Index, one
+          should be careful not to compare communities with widely different population size and geographical situation.
+          Having only two categories, Indigenous communities versus the rest of the country, then takes off this important nuance.
+        </div>
+        <div class="para_text_last"></div>
+      </div>
+
+      <!-- MANITOBA -->
+
+      <div id="contentMB" class="content_hidden">
+        <div class="para_text1" id="para_MB_fonction1">
+          This graph shows all 197 census subdivisions of Manitoba. These are specific local areas such as towns, cities, reserves and other zones treated similarly for statistical purposes.
+        </div>
+        <div class="para_text" id="para_MB_fonction2">
+          The orange circles represent all the subdivisions associated with Indigenous communities, according to
+          criterias from Indigenous and Northern Affairs Canada. Over 62 000 people live in First Nation and Inuit communities in Manitoba.
+        </div>
+        <div class="para_text" id="para_MB_fonction3">
+          When put side by side, the disparity between Inidgenous communities and the rest of the province becomes
+          obvious.
+        </div>
+        <div class="para_text" id="para_MB_fonction4">
+            And when adding the median on each side, the impression of a gap deepens. Even the Indigenous communities
+            with the highest well-being scores don't exceed the median of the rest of the province.
+        </div>
+        <div class="para_text">
+          Through the country, the subdivisions with the largest population (which are the bigger circles in this graph)
+          are usually among the top. That's because the proximity to services is the most influent factor when observing
+          quality of life, and these are abundant in the cities.
+        </div>
+        <div class="para_text">
+          But a large part of First Nation and Inuit people live in remote areas, which in some cases are not accessible by road.
+          Knowing that all remote communities — whether Indigenous or not — have lower scores on the CWB Index, one
+          should be careful not to compare communities with widely different population size and geographical situation.
+          Having only two categories, Indigenous communities versus the rest of the country, then takes off this important nuance.
+        </div>
+        <div class="para_text_last"></div>
+      </div>
+
+      <!-- NEW BRUNSWICK -->
+
+      <div id="contentNB" class="content_hidden">
+        <div class="para_text1" id="para_NB_fonction1">
+          This graph shows all 250 census subdivisions of New Brunswick. These are specific local areas such as towns, cities, reserves and other zones treated similarly for statistical purposes.
+        </div>
+        <div class="para_text" id="para_NB_fonction2">
+          The orange circles represent all the subdivisions associated with Indigenous communities, according to
+          criterias from Indigenous and Northern Affairs Canada. Over 7000 people live in First Nation and Inuit communities in New Brunswick.
+        </div>
+        <div class="para_text" id="para_NB_fonction3">
+          When put side by side, the disparity between Inidgenous communities and the rest of the province becomes
+          obvious.
+        </div>
+        <div class="para_text" id="para_NB_fonction4">
+          And when adding the median on each side, the impression of a gap deepens. Even the Indigenous communities
+          with the highest well-being scores don't exceed the median of the rest of the province.
+        </div>
+        <div class="para_text">
+          Through the country, the subdivisions with the largest population (which are the bigger circles in this graph)
+          are usually among the top. That's because the proximity to services is the most influent factor when observing
+          quality of life, and these are abundant in the cities.
+        </div>
+        <div class="para_text">
+          But a large part of First Nation and Inuit people live in remote areas, which in some cases are not accessible by road.
+          Knowing that all remote communities — whether Indigenous or not — have lower scores on the CWB Index, one
+          should be careful not to compare communities with widely different population size and geographical situation.
+          Having only two categories, Indigenous communities versus the rest of the country, then takes off this important nuance.
+        </div>
+        <div class="para_text_last"></div>
+      </div>
+
+      <!-- NOVA SCOTIA -->
+
+      <div id="contentNS" class="content_hidden">
+        <div class="para_text1" id="para_NS_fonction1">
+          This graph shows all 79 census subdivisions of Nova Scotia. These are specific local areas such as towns, cities, reserves and other zones treated similarly for statistical purposes.
+        </div>
+        <div class="para_text" id="para_NS_fonction2">
+          The orange circles represent all the subdivisions associated with Indigenous communities, according to
+          criterias from Indigenous and Northern Affairs Canada. Over 9000 people live in First Nation and Inuit communities in Nova Scotia.
+        </div>
+        <div class="para_text" id="para_NS_fonction3">
+          When put side by side, the disparity between Inidgenous communities and the rest of the province becomes
+          obvious.
+        </div>
+        <div class="para_text" id="para_NS_fonction4">
+            And when adding the median on each side, the impression of a gap deepens. Even the Indigenous communities
+            with the highest well-being scores don't exceed the median of the rest of the province.
+        </div>
+        <div class="para_text">
+          Through the country, the subdivisions with the largest population (which are the bigger circles in this graph)
+          are usually among the top. That's because the proximity to services is the most influent factor when observing
+          quality of life, and these are abundant in the cities.
+        </div>
+        <div class="para_text">
+          But a large part of First Nation and Inuit people live in remote areas, which in some cases are not accessible by road.
+          Knowing that all remote communities — whether Indigenous or not — have lower scores on the CWB Index, one
+          should be careful not to compare communities with widely different population size and geographical situation.
+          Having only two categories, Indigenous communities versus the rest of the country, then takes off this important nuance.
+        </div>
+        <div class="para_text_last"></div>
+      </div>
+
+      <!-- ONTARIO -->
+
+      <div id="contentON" class="content_hidden">
+        <div class="para_text1" id="para_ON_fonction1">
+          This graph shows all 481 census subdivisions of Ontario. These are specific local areas such as towns, cities, reserves and other zones treated similarly for statistical purposes.
+        </div>
+        <div class="para_text" id="para_ON_fonction2">
+          The orange circles represent all the subdivisions associated with Indigenous communities, according to
+          criterias from Indigenous and Northern Affairs Canada. Over 51 000 people live in First Nation and Inuit communities in Ontario.
+        </div>
+        <div class="para_text" id="para_ON_fonction3">
+          When put side by side, the disparity between Inidgenous communities and the rest of the province becomes
+          obvious.
+        </div>
+        <div class="para_text" id="para_ON_fonction4">
+            And when adding the median on each side, the impression of a gap deepens. Even the Indigenous communities
+            with the highest well-being scores don't exceed the median of the rest of the province.
+        </div>
+        <div class="para_text">
+          Through the country, the subdivisions with the largest population (which are the bigger circles in this graph)
+          are usually among the top. That's because the proximity to services is the most influent factor when observing
+          quality of life, and these are abundant in the cities.
+        </div>
+        <div class="para_text">
+          But a large part of First Nation and Inuit people live in remote areas, which in some cases are not accessible by road.
+          Knowing that all remote communities — whether Indigenous or not — have lower scores on the CWB Index, one
+          should be careful not to compare communities with widely different population size and geographical situation.
+          Having only two categories, Indigenous communities versus the rest of the country, then takes off this important nuance.
+        </div>
+        <div class="para_text_last"></div>
+      </div>
+
+      <!-- QUEBEC -->
+
+      <div id="contentQC" class="content_hidden">
+        <div class="para_text1" id="para_QC_fonction1">
+          This graph shows all 1087 census subdivisions of Quebec. These are specific local areas such as towns, cities, reserves and other zones treated similarly for statistical purposes.
+        </div>
+        <div class="para_text" id="para_QC_fonction2">
+          The orange circles represent all the subdivisions associated with Indigenous communities, according to
+          criterias from Indigenous and Northern Affairs Canada.
+          Over 56 000 people live in First Nation and Inuit communities in Quebec.
+        </div>
+        <div class="para_text" id="para_QC_fonction3">
+          When put side by side, the disparity between Inidgenous communities and the rest of the province becomes
+          obvious.
+        </div>
+        <div class="para_text" id="para_QC_fonction4">
+          And when adding the median on each side, the impression of a gap deepens. Only one Indigenous community
+          has a higher well-being score than the median of the rest of the province — Wendake. The Huron-Wendat nation is located in an urban environment and developed the cultural tourism of its community, which explains the high score.
+        </div>
+        <div class="para_text">
+          Through the country, the subdivisions with the largest population (which are the bigger circles in this graph)
+          are usually among the top. That's because the proximity to services is the most influent factor when observing
+          quality of life, and these are abundant in the cities.
+        </div>
+        <div class="para_text">
+          But a large part of First Nation and Inuit people live in remote areas, which in some cases are not accessible by road.
+          Knowing that all remote communities — whether Indigenous or not — have lower scores on the CWB Index, one
+          should be careful not to compare communities with widely different population size and geographical situation.
+          Having only two categories, Indigenous communities versus the rest of the country, then takes off this important nuance.
+        </div>
+        <div class="para_text_last"></div>
+      </div>
+
+      <!-- SASKATCHEWAN -->
+
+      <div id="contentSK" class="content_hidden">
+        <div class="para_text1" id="para_SK_fonction1">
+          This graph shows all 515 census subdivisions of Saskatchewan. These are specific local areas such as towns, cities, reserves and other zones treated similarly for statistical purposes.
+        </div>
+        <div class="para_text" id="para_SK_fonction2">
+          The orange circles represent all the subdivisions associated with Indigenous communities, according to
+          criterias from Indigenous and Northern Affairs Canada. Over 62 000 people live in First Nation and Inuit communities in Saskatchewan.
+        </div>
+        <div class="para_text" id="para_SK_fonction3">
+          When put side by side, the disparity between Inidgenous communities and the rest of the province becomes
+          obvious.
+        </div>
+        <div class="para_text" id="para_SK_fonction4">
+          And when adding the median on each side, the impression of a gap deepens. Even the Indigenous communities
+          with the highest well-being scores don't exceed the median of the rest of the province.
+        </div>
+        <div class="para_text">
+          Through the country, the subdivisions with the largest population (which are the bigger circles in this graph)
+          are usually among the top. That's because the proximity to services is the most influent factor when observing
+          quality of life, and these are abundant in the cities.
+        </div>
+        <div class="para_text">
+          But a large part of First Nation and Inuit people live in remote areas, which in some cases are not accessible by road.
+          Knowing that all remote communities — whether Indigenous or not — have lower scores on the CWB Index, one
+          should be careful not to compare communities with widely different population size and geographical situation.
+          Having only two categories, Indigenous communities versus the rest of the country, then takes off this important nuance.
+        </div>
+        <div class="para_text_last"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="canada_parent" class="content_hidden">
+    <div class="fields_text">
+      While the quality of life of <mark id="off_reserve">Non-Indigenous communities</mark> through Canada are quite
+      stable — a Community Well-Being Index between 76 and 80 — the scores of the <mark id="on_reserve">Indigenous communities</mark>
+       vary widely depending on which province we look at.
+    </div>
+  </div>
+
+  <div class="content_hidden" id="content_dataviz3">
+    <div id="dataviz_wrapper3" class="datavizzzible">
+      <svg id="dataviz3"></svg>
+    </div>
+  </div>
+
+  <div id="canada_parent2">
+    <div class="fields_text">
+
+      <div id="canada_analysis_AB" class="content_hidden">
+        <div class="canada_para">
+          Alberta’s quality of life is one of the two best in the country, with British Columbia.
+          And yet, the province’s Indigenous communities scores are well below the Canadian Indigenous average. The gap between the two categories is the third highest — 27 — while the national gap’s average is 21.
+        </div>
+        <div class="canada_para">
+          The Prairies hold the worst Indigenous communities' quality of life of the country, and by far. Manitoba, Saskatchewan and
+          Alberta respectively have the bottom three CWB indexes. Yet, they have some of the highest Community Well-Being scores for
+          the non-Indigenous subdivisions. This high disparity in the Prairies has been marked every census year since the
+          First Nation communities are included in the statistics, in 1981, according to the 2011 CWBI Report.
+        </div>
+        <div class="canada_para" class="province_to_fill">
+        </div>
+      </div>
+
+      <div id="canada_analysis_BC" class="content_hidden">
+        <div class="canada_para">
+          British Columbia offers the best quality of life of the country for both Indigenous and non-Indigenous communities. 
+          The disparity between the well-being scores of the Indigenous communities versus the rest of the province is quite high — 25 — while the national gap’s average is 21.
+        </div>
+        <div class="canada_para">
+          On the opposite, the Prairies hold the worst Indigenous communities' quality of life of the country, and by far. Manitoba, Saskatchewan and
+          Alberta respectively have the bottom three CWB indexes. Yet, they have some of the highest Community Well-Being scores for
+          the non-Indigenous subdivisions. This high disparity in the Prairies has been marked every census year since the
+          First Nation communities are included in the statistics, in 1981, according to the 2011 CWBI Report.
+        </div>
+        <div class="canada_para" class="province_to_fill">
+        </div>
+      </div>
+
+      <div id="canada_analysis_MB" class="content_hidden">
+        <div class="canada_para">
+          Manitoba’s quality of life is the same as the Canadian average, yet its Indigenous communities have the worst quality of life in the country. The gap between the two categories is the highest — 30 — while the national
+          gap’s average is 21.
+        </div>
+        <div class="canada_para">
+          The Prairies hold the worst Indigenous communities' quality of life of the country, and by far. Manitoba, Saskatchewan and
+          Alberta respectively have the bottom three CWB indexes. Yet, they have some of the highest Community Well-Being scores for
+          the non-Indigenous subdivisions. This high disparity in the Prairies has been marked every census year since the
+          First Nation communities are included in the statistics, in 1981, according to the 2011 CWBI Report.
+        </div>
+        <div class="canada_para" class="province_to_fill">
+        </div>
+      </div>
+
+      <div id="canada_analysis_NB" class="content_hidden">
+        <div class="canada_para">
+          New Brunswick is the province with the least inequalities of Canada, when looking at the Community Well-Being scores, with a gap of only 12 while the national gap’s average is 21. It also offers the second best quality of life in Indigenous communities, after British Columbia.
+        </div>
+        <div class="canada_para">
+          On the opposite, the Prairies hold the worst Indigenous communities' quality of life of the country, and by far. Manitoba, Saskatchewan and
+          Alberta respectively have the bottom three CWB indexes. Yet, they have some of the highest Community Well-Being scores for
+          the non-Indigenous subdivisions. This high disparity in the Prairies has been marked every census year since the
+          First Nation communities are included in the statistics, in 1981, according to the 2011 CWBI Report.
+        </div>
+        <div class="canada_para" class="province_to_fill">
+        </div>
+      </div>
+
+      <div id="canada_analysis_NS" class="content_hidden">
+        <div class="canada_para">
+          Nova Scotia is among the provinces with the least inequalities in Canada, when looking at the Community Well-Being scores. While the national gap between Indigenous communities and the rest of the country is 21, it is only 14 in Nova Scotia. This
+          can be explained by a low score for the province in general as well as a better quality of life in the Indigenous communities than the country’s average.
+        </div>
+        <div class="canada_para">
+          On the opposite, the Prairies hold the worst Indigenous communities' quality of life of the country, and by far. Manitoba, Saskatchewan and
+          Alberta respectively have the bottom three CWB indexes. Yet, they have some of the highest Community Well-Being scores for
+          the non-Indigenous subdivisions. This high disparity in the Prairies has been marked every census year since the
+          First Nation communities are included in the statistics, in 1981, according to the 2011 CWBI Report.
+        </div>
+        <div class="province_to_fill">
+        </div>
+      </div>
+
+      <div id="canada_analysis_ON" class="content_hidden">
+        <div class="canada_para">
+          Ontario’s quality of life in Indigenous communities is only one point over the national average. The
+          disparity between the Indigenous communities and the rest of the province's well-being scores is spot on the national average - 21.
+        </div>
+        <div class="canada_para">
+          The Prairies, however, hold the worst Indigenous communities' quality of life of the country, and by far. Manitoba, Saskatchewan and
+          Alberta respectively have the bottom three CWB indexes. Yet, they have some of the highest Community Well-Being scores for
+          the non-Indigenous subdivisions. This high disparity in the Prairies has been marked every census year since the
+          First Nation communities are included in the statistics, in 1981, according to the 2011 CWBI Report.
+        </div>
+        <div class="province_to_fill">
+        </div>
+      </div>
+
+      <div id="canada_analysis_QC" class="content_hidden">
+        <div class="canada_para">
+          Quebec is among the provinces with the least inequalities of Canada, when looking at the Community Well-Being scores. While the national gap between Indigenous communities and the rest of the country is 21, it is only 16 in Quebec. This
+          can be explained by a low score for the province in general as well as a better quality of life in the Indigenous communities than the country’s average.
+        </div>
+
+        <!--<div class="canada_para">
+
+          ******It is also important to note that Quebec has a high population of Inuits, which are included in the “off
+          reserve” category. When evaluated separately, Inuit communities score higher CWB indexes than First Nation
+          ones, but lower than the non-Aboriginal ones. This means that, if there were three categories, the
+          non-Aboriginal subdivisions would have a higher median.******
+        
+          Ajouter ici un autre paragraphe sur la présence des Inuits au Québec et le fait qu'ils se retrouvent entre First Nations et non-Aboriginal selon les créateurs du CWBI.
+        </div>
+        -->
+
+        <div class="canada_para">
+          The Prairies hold the worst Indigenous communities' quality of life of the country, and by far. Manitoba, Saskatchewan and
+          Alberta respectively have the bottom three CWB indexes. Yet, they have some of the highest Community Well-Being scores for
+          the non-Indigenous subdivisions. This high disparity in the Prairies has been marked every census year since the
+          First Nation communities are included in the statistics, in 1981, according to the 2011 CWBI Report.
+        </div>
+        <div class="canada_para" class="province_to_fill">
+        </div>
+      </div>
+
+      <div id="canada_analysis_SK" class="content_hidden">
+        <div class="canada_para">
+          Saskatchewan’s quality of life is among the best in the country, yet the province’s Indigenous communities scores are well below the Canadian Indigenous average. The province also has the second biggest gap between the Indigenous communities' quality of life when compared to the rest of the province — 29 — while the national gap’s average is 21.
+        </div>
+        <div class="canada_para">
+          The Prairies hold the worst Indigenous communities' quality of life of the country, and by far. Manitoba, Saskatchewan and
+          Alberta respectively have the bottom three CWB indexes. Yet, they have some of the highest Community Well-Being scores for
+          the non-Indigenous subdivisions. This high disparity in the Prairies has been marked every census year since the
+          First Nation communities are included in the statistics, in 1981, according to the 2011 CWBI Report.
+        </div>
+        <div class="canada_para" class="province_to_fill">
+        </div>
+      </div>
+    </div>
+
+    <div class="content_hidden" id="fields_parent">
+      <div class="buttons_fields">
+        <div>
+          <a class="fields" data-field="income">Income</a>
+          <a class="fields" data-field="education">Education</a>
+          <a class="fields" data-field="dwellings">Dwellings</a>
+          <a class="fields" data-field="labour">Labour Force</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content_hidden" id="content_dataviz2">
+      <div id="dataviz_wrapper2" class="datavizzzible">
+        <svg id="dataviz2"></svg>
+      </div>
+    </div>
+
+    <div id="indicators" class="content_hidden" >
+      <div class="fields_text">
+        Here is how the indicators below were calculated, all from the 2016 census data. For more information on the methodology behind these calculations, read the CWB Index 2011 <a href="https://www.aadnc-aandc.gc.ca/eng/1345816651029/1345816742083" target="_blank">Report</a>. 
+        <br><br>
+        <b>Income:</b> It uses the income per capita, and converts dollars of income per capita into logarithms, to account for the fact that those who occupy lower income strata will benefit more from additional income than those at higher income levels.
+        <br><br>
+        <b>Education:</b> It is composed of the proportion of 20+ years old who obtained at least a high school certificate and the proportion of 25+ years old that has a university degree.
+        <br><br>
+        <b>Dwellings:</b> It is composed of the proportion of people living in a dwelling that contains no more than one person per room and the proportion of people living in a dwelling that is not in need of major repairs.
+        <br><br>
+        <b>Labour Force:</b> It uses the proportion of 20-65 years old that was involved in the labour force during the week preceding census day (which accounts for labour force participation) and the proportion of 20-65 years old that was employed that week. 
+        <br><br>
+        <button type="submit" onClick="refreshPage()">Try another province</button>
+      </div>
+    </div>
+
+    <div id="metho">
+      <p><b>Methodology</b></p>
+      <p>
+        The First Nation communities, or “on-reserve”, are the census subdivisions which had one of the six types
+        legally affiliated with First Nations or Indian bands by Indigenous and Northern Affairs Canada. A total of
+        364 First Nations communities were analysed for the purpose of this study. The “off-reserve” category includes
+        all
+        the subdivisions that were not a part of that first category.
+      </p>
+      <p>
+        The index is calculated from a sampling of all residents of a community, not only those of First Nations
+        ancestry. It also captures the aggregate index of each subdivision and therefore does not necessarily reflect
+        the diversity within a community.
+      </p>
+      <p>
+        Quality of life was calculated by the Community Well-Being Index, which combines indicators on education,
+        labour force activity, income and housing to give each community a well-being “score", ranging from 1 to 100.
+        The
+        actual range through the country is 15 to 69.
+      </p>
+      <p>
+        Data was insufficient for Yukon, the Northwest Territories, Nunavut, Newfoundland and Labrador and Prince
+        Edward Island to analyse, so these provinces and territories were taken off for statistical purpose.
+      </p>
+      <p>
+        Subdivisions with a small population (below the 250 people threshold) were suppressed because it lacked income
+        data. Some bands, like the Mohawks in Kahnawake, have also refused to take part in the Census. In other cases,
+        since income information is obtained from the Canada Revenue Agency and not everyone who live on a reserve
+        will file a tax return, the quality of the data is not as good.
+      </p>
+      <p>
+        The lack of data especially affected the results of British Columbia (18 873 people), Ontario (6715 people),
+        Alberta (3344 people)and Saskatchewan (2623 people).
+      </p>
+      <p>
+        Quality of life is qualified differently from a culture to another, and the CWBI was used as common grounds
+        with the available data from Statistics Canada. Still, it is important to note that other factors are
+        significant
+        when it comes to quality of life for First Nations. Physical and emotional health, cultural continuity and
+        environmental conservation all impact the well-being of people in First Nation communities, and yet are not
+        included in this index.
+      </p>
+
+</body>
+
+</html>

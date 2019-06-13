@@ -1,0 +1,338 @@
+body {
+  font-family: "Roboto";
+  font-weight: 300;
+  line-height: 1.5em;
+  font-size: 1.15em;
+  background-color: #f7f7f7;
+  color: #282828;
+}
+
+h1 {
+  font-family: "Domine", serif;
+  letter-spacing: 1.6px;
+  font-size: 3.5em;
+  font-weight: 500;
+  line-height: 1em;
+  color: #282828;
+  text-align: center;
+  margin: auto;
+  padding-right: auto;
+  padding-left: auto;
+  padding-top: 1.7em;
+  padding-bottom: 0.5em;
+}
+
+h2 {
+  font-family: "Roboto";
+  letter-spacing: 1.5px;
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height: 1.3em;
+  color: #466336;
+  text-align: center;
+  margin: auto;
+  max-width: 800px;
+  padding-right: auto;
+  padding-left: auto;
+  padding-bottom: 2em;
+}
+
+h3 {
+  line-height: 1em;
+  font-family: "Roboto";
+  font-weight: 400;
+  letter-spacing: 1.1px;
+}
+
+h4 {
+  font-weight: 300;
+  line-height: 1.5em;
+  font-size: 1.15em;
+}
+
+#lead {
+  margin: auto;
+  z-index: 1;
+  max-width: 700px;
+}
+
+a {
+  color: #466336;
+}
+
+#province_question {
+  line-height: 2em;
+  font-weight: 400;
+  margin-top: 1em;
+}
+
+.buttons_parent {
+  line-height: 1em;
+  text-align: center;
+  margin-top: 2em;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 700px;
+}
+
+a.provinces {
+  color: #282828;
+  background-color: #dae3d9;
+  border: 0.5px solid #282828;
+  border-radius: 6px;
+  width: 60%;
+  padding: 8px 0;
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 767px) {
+  a.provinces,
+  a.fields {
+    font-size: 1.7em;
+    width: 100%;
+  }
+}
+
+a.provinces:hover,
+a.fields:hover {
+  background-color: #9fb295;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  cursor: pointer;
+}
+
+.content_hidden {
+  display: none;
+}
+
+#dataviz_wrapper {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.datavizzzible {
+  height: 0;
+  overflow: hidden;
+}
+
+.para_text1 {
+  margin-top: 0px;
+  margin-bottom: 40vh;
+  position: relative;
+  z-index: 30;
+  background-color: #f7f7f7;
+  opacity: 0.85;
+  padding: 1em;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.para_text {
+  margin-top: 100vh;
+  margin-bottom: 40vh;
+  position: relative;
+  z-index: 30;
+  background-color: #f7f7f7;
+  opacity: 0.85;
+  padding: 1em;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.para_text_last {
+  margin-top: 100vh;
+  margin-bottom: 0vh;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 700px;
+  position: relative;
+  z-index: 30;
+  background-color: transparent;
+  padding: 1em;
+}
+
+.y_axis {
+  color: #282828;
+  font-family: "Roboto";
+  font-weight: 200;
+  font-size: 0.7em;
+  shape-rendering: auto;
+}
+
+.x_axis {
+  color: #282828;
+  font-family: "Roboto";
+  font-weight: 200;
+  font-size: 0.65em;
+  shape-rendering: auto;
+}
+
+.y_label,
+.y_label2 {
+  font-family: "Roboto";
+  font-weight: 300;
+  letter-spacing: 1.3px;
+  font-size: 0.7em;
+  fill: #282828;
+}
+
+.x_label {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 0.7em;
+  fill: #282828;
+}
+
+.legende_texte {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 0.5em;
+  fill: #282828;
+}
+
+.median_line,
+.median_line2 {
+  position: static;
+  z-index: -10;
+}
+
+.median_text,
+.median_text2 {
+  font-family: "Roboto";
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 0.6em;
+}
+
+#rect_tooltip {
+  position: absolute;
+  z-index: 100;
+}
+
+#name_tooltip {
+  font-family: "Roboto";
+  font-weight: 300;
+  fill: #282828;
+}
+
+#cwb_tooltip {
+  font-family: "Roboto";
+  font-weight: 300;
+  fill: #282828;
+}
+
+.fields_text {
+  margin: auto;
+  z-index: 1;
+  max-width: 700px;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.buttons_fields {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  max-width: 700px;
+  text-align: center;
+}
+
+a.fields {
+  color: #282828;
+  background: #dae3d9;
+  border: 0.5px solid #282828;
+  border-radius: 6px;
+  width: 60%;
+  padding: 8px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 767px) {
+  a.fields {
+    font-size: 1.7em;
+    width: 100%;
+  }
+}
+
+.active {
+  background-color: #799170;
+  cursor: pointer;
+}
+
+#dataviz_wrapper2 {
+  width: 100%;
+  height: 85vh;
+}
+
+.canada_text {
+  margin: auto;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.canada_para {
+  padding-bottom: 1.3em;
+}
+
+#on_reserve {
+  background-color: #e7b898;
+}
+
+#off_reserve {
+  background-color: #b8cab0;
+}
+
+#dataviz_wrapper3 {
+  width: 80%;
+  height: 85vh;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+/* Not working for some reason */
+  #dataviz_wrapper3 {
+    width: 100%;
+    height: 60vh;
+  }
+}
+
+.text_indig {
+  font-family: "Roboto";
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 0.55em;
+  fill: #282828;
+}
+
+.text_non_indig {
+  font-family: "Roboto";
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 0.55em;
+  fill: white;
+}
+
+.tick {
+  font-family: "Roboto";
+  font-weight: 300;
+  fill: #282828;
+}
+
+#metho {
+  margin-top: 3em;
+  margin-bottom: 6em;
+  padding: 1em;
+  font-size: 0.85em;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  position: static;
+}
